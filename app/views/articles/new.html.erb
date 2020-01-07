@@ -1,5 +1,5 @@
-<h1>Articles#new</h1>
-<p>Find me in app/views/articles/new.html.erb</p>
+<h1>Publish your Article</h1>
+<!-- <p>Find me in app/views/articles/new.html.erb</p> -->
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
@@ -10,7 +10,7 @@
       <%= i.text_field :title, class: 'form-control' %>
 
       <%= i.label :content %>
-      <%= i.textarea_field :content, class: 'form-control' %>
+      <%= i.text_area :content, class: 'form-control' %>
 
       <%= i.label :user_id %>
       <%= i.number_field :user_id %>

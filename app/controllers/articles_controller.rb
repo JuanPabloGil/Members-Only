@@ -6,8 +6,8 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
 
-    if @article.save?
-      #do nothing
+    if @article.save
+      redirect_to root_path    
     else
       render 'new'
     end
