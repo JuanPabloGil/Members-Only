@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'articles', to: 'articles#show'
   resources :articles
 
-  root 'static_page#home'
+  root 'articles#show'
   get  '/signup',  to: 'users#new'
   resources :users
 

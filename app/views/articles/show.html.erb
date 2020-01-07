@@ -2,9 +2,10 @@
 
 <div class="row">
 
-
-  <label>Author:</label>
-  <%= @article.user.name %>
+  <% if logged_in? %>
+    <label>Author: </label>
+    <%= @article.user.name %>
+  <% end %>
   <br>
   <label>Title:</label>
   <%= @article.title %>
