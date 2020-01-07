@@ -2,17 +2,31 @@
 
 <div class="row">
 
+
+
+
+
+  <% @article.each do |art| %>
+  <hr>
   <% if logged_in? %>
-    <label>Author: </label>
-    <%= @article.user.name %>
+  <label>Author: </label>
+  <%= art.user.name %>
   <% end %>
   <br>
   <label>Title:</label>
-  <%= @article.title %>
+  <%= art.title %>
   <br>
   <label>Content:</label>
-  <%= @article.content %>
+  <%= art.content %>
   <br>
+
+  <% end %>
+
+
+
+
+
+
 
 
 </div>

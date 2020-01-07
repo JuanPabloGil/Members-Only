@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   def new
-    @article = Article.new
+    @articles = Article.all
   end
 
   def create
@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.first
+    @article = Article.all
   end
 
   private
