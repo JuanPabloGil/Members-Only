@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get 'articles/show'
   get '/publish', to: 'articles#new'
+  get 'articles', to: 'articles#show'
   resources :articles
 
   root 'static_page#home'

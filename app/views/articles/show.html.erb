@@ -1,2 +1,17 @@
-<h1>Articles#show</h1>
-<p>Find me in app/views/articles/show.html.erb</p>
+<h1>All the Articles</h1>
+
+<div class="row">
+
+
+  <label>Author:</label>
+  <%= @article.user.name %>
+  <br>
+  <label>Title:</label>
+  <%= @article.title %>
+  <br>
+  <label>Content:</label>
+  <%= @article.content %>
+  <br>
+
+
+</div>
