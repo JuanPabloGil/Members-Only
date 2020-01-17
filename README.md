@@ -1,24 +1,56 @@
-# README
+# Members Only Web App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**This is an app for exclusive clubhouse where your members can write embarrassing posts about non-members. Inside the clubhouse, members can see whos the author of a post is but, outside, they can only see the story and wonder who wrote it.**
 
-Things you may want to cover:
 
-* Ruby version
+## Built With
+- This project was builded with Rails v 5.2.4 and ruby v 2.6.4
 
-* System dependencies
+## Getting Started
 
-* Configuration
+To get a local copy up and running follow these simple example steps.
 
-* Database creation
+### Setup
 
-* Database initialization
+before start be sure to run the next commands on the root files.
+  
+        $ bundle install
 
-* How to run the test suite
+### Usage
 
-* Services (job queues, cache servers, search engines, etc.)
+You can create a user and start Posting, the non users would not see the author of the posts untill they suscribes
 
-* Deployment instructions
+### Deployment
 
-* ...
+To deploy on local server use the next command:
+        
+        rails server
+
+
+## Authors
+
+👤 **Juan Pablo Gil**
+
+- Github: [@jpablogil](https://github.com/JuanPabloGil)
+- Twitter: [@JuanPabloMG4](https://twitter.com/JuanPabloMG4)
+- Linkedin: [Juan Pablo Gil](https://www.linkedin.com/in/juan-pablo-gil-1321a515a/)
+
+👤 **Flover Herrera**
+
+- Github: [@githubhandle]()
+- Twitter: [@twitterhandle]()
+- Linkedin: [linkedin]()
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+
+## 📝 License
+
+This project is [MIT](lic.url) licensed.
