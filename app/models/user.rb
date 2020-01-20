@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   attr_accessor :remember_token
   has_many :articles
+  before_create :remember
   before_save   :downcase_email
   validates :name,  presence: true, length: {maximum: 50}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -18,8 +19,8 @@ class User < ApplicationRecord
   end
 
   def remember
-    self.remember_token = User.new_token
-    update_attribute(:remember_digest, User.digest(remember_token))
+    self.remember_token=SecureRandom.urlsafe_base64
+    self.remember_digest=User.digest(self.remember_token)
   end
 
   private
