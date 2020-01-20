@@ -30,7 +30,7 @@ class ArticlesController < ApplicationController
 
   def require_logged_in
     unless logged_in?
-      flash[:error] = "You must be logged in to make a post"
+      flash[:danger] = "You must be logged in to make a post"
       redirect_to login_path
     end
   end
