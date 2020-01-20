@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  before_action :require_logged_in
+
   def new
     @article = Article.new
     @user = User.new
@@ -26,5 +28,10 @@ class ArticlesController < ApplicationController
     params.require(:article).permit(:title,:content,:user_id)
   end
 
-
+  def require_logged_in
+    unless logged_in?
+      flash[:error] = "You must be logged in to make a post"
+      redirect_to login_path
+    end
+  end
 end
