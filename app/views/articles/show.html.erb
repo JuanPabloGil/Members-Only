@@ -1,0 +1,32 @@
+<h1>All the Articles</h1>
+
+<div class="row">
+
+
+
+
+
+  <% @article.each do |art| %>
+  <hr>
+  <% if logged_in? %>
+  <label>Author: </label>
+  <%= art.user.name %>
+  <% end %>
+  <br>
+  <label>Title:</label>
+  <%= art.title %>
+  <br>
+  <label>Content:</label>
+  <%= art.content %>
+  <br>
+
+  <% end %>
+
+
+
+
+
+
+
+
+</div>
