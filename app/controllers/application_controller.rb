@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :log_in, :remember, :current_user, :logged_in?, :log_out
@@ -17,7 +19,7 @@ class ApplicationController < ActionController::Base
       @current_user ||= User.find_by(id: user_id)
     elsif (user_id = cookies.signed[:user_id])
       user = User.find_by(id: user_id)
-      if user && user.authenticated?(cookies[:remember_token])
+      if user&.authenticated?(cookies[:remember_token])
         log_in user
         @current_user = user
       end
@@ -35,6 +37,7 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
   def forget(user)
     user.forget
     cookies.delete(:user_id)

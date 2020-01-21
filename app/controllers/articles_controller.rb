@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ArticlesController < ApplicationController
   before_action :require_logged_in
 
@@ -25,13 +27,13 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title,:content,:user_id)
+    params.require(:article).permit(:title, :content, :user_id)
   end
 
   def require_logged_in
-    unless logged_in?
-      flash[:danger] = "You must be logged in to make a post"
-      redirect_to login_path
-    end
+    return if logged_in?
+
+    flash[:danger] = 'You must be logged in to make a post'
+    redirect_to login_path
   end
 end
