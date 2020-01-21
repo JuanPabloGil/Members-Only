@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
- 
+  helper_method :log_in, :remember, :current_user, :logged_in?, :log_out
+
   def log_in(user)
     session[:user_id] = user.id
   end
@@ -23,12 +24,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def forget(user)
-    user.forget
-    cookies.delete(:user_id)
-    cookies.delete(:remember_token)
-  end
-
   def logged_in?
     !current_user.nil?
   end
@@ -37,5 +32,12 @@ class ApplicationController < ActionController::Base
     forget(current_user)
     session.delete(:user_id)
     @current_user = nil
+  end
+
+  private
+  def forget(user)
+    user.forget
+    cookies.delete(:user_id)
+    cookies.delete(:remember_token)
   end
 end
